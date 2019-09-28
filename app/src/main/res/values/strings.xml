@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Nu34life</string>
+    <string name="btnNutricionista">Nutricionista</string>
+    <string name="btnPaciente">Paciente</string>
+    <string name="etCorreo">Correo Electronico</string>
+    <string name="etContraseña">Contraseña</string>
+    <string name="etNombre">Nombres</string>
+    <string name="etApellido">Apellidos</string>
+    <string name="etFechaNacimiento">Fecha de Nacimiento: yyyy-mm-dd</string>
+    <string name="btnCancelar">Cancelar</string>
+    <string name="btnIniciar">Iniciar Seccion</string>
+    <string name="btnCrear">Crear</string>
+
+
+    <string name="Peso">Peso</string>
+    <string name="kg">kg</string>
+    <string name="Talla">Talla</string>
+    <string name="cm">cm</string>
+    <string name="glucosa">Glucosa</string>
+    <string name="mgdl">mg/dl</string>
+    <string name="title_activity_main_patient">MainPatient</string>
+    <string name="title_Salud">Salud</string>
+    <string name="title_Perfil">Perfil</string>
+    <string name="title_Comidas">Comidas</string>
+
+    <string name="lunes">Lunes</string>
+    <string name="martes">Martes</string>
+    <string name="miercoles">Miercoles</string>
+    <string name="jueves">Jueves</string>
+    <string name="viernes">Viernes</string>
+    <string name="sabado">Sabado</string>
+    <string name="domingo">Domingo</string>
+    <string name="afiliar">Afiliar</string>
+</resources>

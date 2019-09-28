@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView_s"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="143dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="140dp"
+        app:srcCompat="@drawable/usuario" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="106dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView_s"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="297dp"
+        android:text="@string/etNombre"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvPatientNombre"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="320dp"
+        android:text="@string/etApellido"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="168dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvPatientApellido"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="235dp"
+        android:text="@string/etCorreo"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvPatientGlucosa"
+        android:layout_width="91dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvPatientCorreo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="306dp"
+        android:text="@string/etContraseña"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:layout_below="@+id/tvPatientGlucosa"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="403dp"
+        android:layout_marginBottom="365dp" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvPatientContraseña"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="234dp"
+        android:text="Fecha de Nacimiento"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvPatienteFecha"
+        android:layout_width="218dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView11"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="185dp"
+        android:text="TextView"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvPatientCorreo"
+        android:layout_width="294dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView8"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="101dp"
+        android:text="TextView"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvPatientContraseña"
+        android:layout_width="307dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvPatientGlucosa"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="96dp"
+        android:text="TextView"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvPatientNombre"
+        android:layout_width="317dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="86dp"
+        android:text="TextView"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvPatientApellido"
+        android:layout_width="300dp"
+        android:layout_height="23dp"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="103dp"
+        android:text="TextView"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnAfiliar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvPatienteFecha"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/afiliar" />
+
+</RelativeLayout>

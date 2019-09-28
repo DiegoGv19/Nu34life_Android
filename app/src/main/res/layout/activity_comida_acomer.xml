@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ComidaAComer">
+
+    <TextView
+        android:id="@+id/tvComidadelDia"
+        android:layout_width="0dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="68dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="TextView"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDiaComida" />
+
+    <TextView
+        android:id="@+id/tvDiaComida"
+        android:layout_width="0dp"
+        android:layout_height="63dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="TextView"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="432dp"
+        android:layout_height="158dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/portada_salud" />
+
+    <TextView
+        android:id="@+id/tvHorarioComida"
+        android:layout_width="0dp"
+        android:layout_height="63dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="TextView"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDiaComida" />
+</androidx.constraintlayout.widget.ConstraintLayout>

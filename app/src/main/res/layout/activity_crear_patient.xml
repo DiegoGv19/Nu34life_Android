@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CrearPatient">
+
+    <EditText
+        android:id="@+id/etCorreoC"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="@string/etCorreo"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="@+id/etFechaC"
+        app:layout_constraintTop_toBottomOf="@+id/etFechaC" />
+
+    <EditText
+        android:id="@+id/etContraseñaC"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="@string/etContraseña"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/etCorreoC"
+        app:layout_constraintTop_toBottomOf="@+id/etCorreoC"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/etNombreC"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/etNombre"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etApellidoC"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="@string/etApellido"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/etNombreC"
+        app:layout_constraintTop_toBottomOf="@+id/etNombreC" />
+
+    <EditText
+        android:id="@+id/etFechaC"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="@string/etFechaNacimiento"
+        android:inputType="date"
+        app:layout_constraintStart_toStartOf="@+id/etApellidoC"
+        app:layout_constraintTop_toBottomOf="@+id/etApellidoC" />
+
+    <Button
+        android:id="@+id/btnCrearC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/btnCrear"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/etContraseñaC"
+        app:layout_constraintTop_toBottomOf="@+id/etContraseñaC"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnCancelarC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="96dp"
+        android:text="@string/btnCancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/etContraseñaC"
+        app:layout_constraintHorizontal_bias="0.59"
+        app:layout_constraintStart_toEndOf="@+id/btnCrearC"
+        app:layout_constraintTop_toBottomOf="@+id/etContraseñaC"
+        app:layout_constraintVertical_bias="0.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>

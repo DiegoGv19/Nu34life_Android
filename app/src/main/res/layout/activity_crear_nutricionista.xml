@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CrearNutricionista">
+
+    <EditText
+        android:id="@+id/etContraseña"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="@string/etContraseña"
+        android:inputType="textPassword"
+        android:textColor="@color/colorSecondaryText"
+        android:textColorHint="@color/colortertiaryText"
+        app:layout_constraintStart_toStartOf="@+id/etCorreo"
+        app:layout_constraintTop_toBottomOf="@+id/etCorreo" />
+
+    <EditText
+        android:id="@+id/etApellido"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="@string/etApellido"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorSecondaryText"
+        android:textColorHint="@color/colortertiaryText"
+        app:layout_constraintStart_toStartOf="@+id/etNombre"
+        app:layout_constraintTop_toBottomOf="@+id/etNombre" />
+
+    <EditText
+        android:id="@+id/etNombre"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/etNombre"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorSecondaryText"
+        android:textColorHint="@color/colortertiaryText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.177"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etCumpleaños"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="@string/etFechaNacimiento"
+        android:inputType="date"
+        android:textColor="@color/colorSecondaryText"
+        android:textColorHint="@color/colortertiaryText"
+        app:layout_constraintStart_toStartOf="@+id/etApellido"
+        app:layout_constraintTop_toBottomOf="@+id/etApellido" />
+
+    <Button
+        android:id="@+id/btnCancelar"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/botonredondo"
+        android:text="@string/btnCancelar"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etContraseña"
+        app:layout_constraintVertical_bias="0.333" />
+
+    <Button
+        android:id="@+id/btnCrear"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/botonredondo"
+        android:text="@string/btnCrear"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnCancelar"
+        app:layout_constraintHorizontal_bias="0.352"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etContraseña"
+        app:layout_constraintVertical_bias="0.341" />
+
+    <EditText
+        android:id="@+id/etCorreo"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="@string/etCorreo"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/colorSecondaryText"
+        android:textColorHint="@color/colortertiaryText"
+        app:layout_constraintStart_toStartOf="@+id/etCumpleaños"
+        app:layout_constraintTop_toBottomOf="@+id/etCumpleaños" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

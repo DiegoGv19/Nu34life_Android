@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginPatient">
+
+    <EditText
+        android:id="@+id/etCorreo2"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="212dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/etCorreo"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etContraseña2"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="@string/etContraseña"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toStartOf="@+id/etCorreo2"
+        app:layout_constraintTop_toBottomOf="@+id/etCorreo2" />
+
+    <Button
+        android:id="@+id/btnIniciar2"
+        android:layout_width="300dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/btnIniciar"
+        app:layout_constraintStart_toStartOf="@+id/etContraseña2"
+        app:layout_constraintTop_toBottomOf="@+id/etContraseña2" />
+
+    <Button
+        android:id="@+id/btnCrear2"
+        android:layout_width="300dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/btnCrear"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btnIniciar2"
+        app:layout_constraintTop_toBottomOf="@+id/btnIniciar2"
+        app:layout_constraintVertical_bias="0.167" />
+</androidx.constraintlayout.widget.ConstraintLayout>
