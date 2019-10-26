@@ -6,35 +6,40 @@ import java.util.List;
 public class Patient {
 
     private Long id;
-
     private String name;
     private String lastName;
     private String birthdate;
     private String email;
     private String password;
-    private Nutritionist nutritionist;
-    private Boolean activated;
+    private String phone;
 
-    public Patient(String name, String lastName, String birthdate, String email, String password, Boolean activated) {
-        this.name = name;
-        this.lastName = lastName;
-        this.birthdate = birthdate;
-        this.email = email;
-        this.password = password;
-        this.activated = activated;
-    }
-
-    public Patient() {
-    }
-
-    public Patient(Long id, String name, String lastName, String birthdate, String email, String password, Boolean activated) {
+    public Patient(Long id, String name, String lastName, String birthdate, String email, String password, String phone) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.birthdate = birthdate;
         this.email = email;
         this.password = password;
-        this.activated = activated;
+        this.phone = phone;
+    }
+
+    public Patient(String name, String lastName, String birthdate, String email, String password, String phone) {
+
+        this.name = name;
+        this.lastName = lastName;
+        this.birthdate = birthdate;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public Long getId() {
@@ -85,42 +90,8 @@ public class Patient {
         this.password = password;
     }
 
-    public Boolean getActivated() {
-        return activated;
-    }
-
-    public void setActivated(Boolean activated) {
-        this.activated = activated;
-    }
-
-    public List<Allergy> getAllergies() {
-        return allergies;
-    }
-
-    public void setAllergies(List<Allergy> allergies) {
-        this.allergies = allergies;
-    }
-
-    public List<State> getStates() {
-        return states;
-    }
-
-    public void setStates(List<State> states) {
-        this.states = states;
-    }
-
-    public Nutritionist getNutritionist() {
-        return nutritionist;
-    }
-
-    public void setNutritionist(Nutritionist nutritionist) {
-        this.nutritionist = nutritionist;
-    }
 
 
-    private List<Allergy> allergies = new ArrayList<>();
-
-    private List<State> states = new ArrayList<State>();
 
 
     @Override
@@ -132,8 +103,7 @@ public class Patient {
                 ", birthdate='" + birthdate + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", nutritionist=" + nutritionist +
-                ", activated=" + activated +
+                ", phone='" + phone + '\'' +
                 '}';
     }
 }

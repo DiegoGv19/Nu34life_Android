@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -51,7 +52,7 @@ public class LoginPatient extends AppCompatActivity {
         btnIniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(etCorreo.getText().toString() != "" && etContraseña.getText().toString() != "" ){
+                if(validar()){
                     getPatientes(etCorreo.getText().toString(),etContraseña.getText().toString());
                 }
             }
@@ -59,36 +60,58 @@ public class LoginPatient extends AppCompatActivity {
 
 
     }
-    private void getPatientes(String email, final String contraseña){
+    private void getPatientes(String email, final String password){
 
 
-
-        Call<List<Patient>> call = iPatient.getPatient(email);
-        call.enqueue(new Callback<List<Patient>>() {
+        Call<Patient> call = iPatient.getPatientEP(email,password);
+        call.enqueue(new Callback<Patient>() {
             @Override
-            public void onResponse(Call<List<Patient>> call, Response<List<Patient>> response) {
+            public void onResponse(Call<Patient> call, Response<Patient> response) {
                 if(!response.isSuccessful()){
                     return;
                 }
 
-                List<Patient> listpatientes = response.body();
+                Patient listpatientes = response.body();
                 if(listpatientes != null){
-                    for (Patient pat: listpatientes){
-                        if(pat.getPassword().equals(contraseña)){
 
 
-                            Intent intent = new Intent(LoginPatient.this,MainPatient.class);
-                            intent.putExtra("Correo",etCorreo.getText().toString());
-                            startActivity(intent);
-                        }                    }
+                    Intent intent = new Intent(LoginPatient.this,MainPatient.class);
+                    intent.putExtra("Correo",etCorreo.getText().toString());
+                    intent.putExtra("Contraseña",etContraseña.getText().toString());
+                    intent.putExtra("Id",listpatientes.getId().toString());
+                    intent.putExtra("Nombre",listpatientes.getName().toString()+" "+listpatientes.getLastName().toString());
+                    startActivity(intent);
+
+
+                }
+                else{
+                    Toast.makeText(LoginPatient.this,"Este usuario no esta registrado",Toast.LENGTH_SHORT).show();
+
                 }
             }
 
             @Override
-            public void onFailure(Call<List<Patient>> call, Throwable t) {
+            public void onFailure(Call<Patient> call, Throwable t) {
 
             }
         });
 
+    }
+    public boolean validar(){
+        boolean retorno  = true;
+        String email = etCorreo.getText().toString();
+        String contraseña = etContraseña.getText().toString();
+
+        if (email.isEmpty()){
+            etCorreo.setError("Ingresa Email");
+            retorno = false;
+        }
+
+        if (contraseña.isEmpty()){
+            etContraseña.setError("Ingresa Contraeña");
+            retorno = false;
+        }
+
+        return retorno;
     }
 }

@@ -86,14 +86,6 @@ public class Ingredient {
         this.potasium = potasium;
     }
 
-    public List<Allergy> getAllergies() {
-        return allergies;
-    }
-
-    public void setAllergies(List<Allergy> allergies) {
-        this.allergies = allergies;
-    }
-
     public List<RecipeDetail> getRecipesdetails() {
         return recipesdetails;
     }
@@ -104,7 +96,6 @@ public class Ingredient {
 
     private Integer sodium;
     private Integer potasium;
-    private List<Allergy> allergies = new ArrayList<>();
     private List<RecipeDetail> recipesdetails = new ArrayList<RecipeDetail>();
 
 }

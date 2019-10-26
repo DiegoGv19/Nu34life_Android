@@ -3,6 +3,10 @@
     <string name="btnNutricionista">Nutricionista</string>
     <string name="btnPaciente">Paciente</string>
     <string name="etCorreo">Correo Electronico</string>
+    <string name="etCelular">Numero de Celular</string>
+
+    <string name="etIDNutricionista">Id Nutricionista</string>
+
     <string name="etContraseña">Contraseña</string>
     <string name="etNombre">Nombres</string>
     <string name="etApellido">Apellidos</string>
@@ -31,4 +35,11 @@
     <string name="sabado">Sabado</string>
     <string name="domingo">Domingo</string>
     <string name="afiliar">Afiliar</string>
+
+
+    /*Facebook*/
+
+    <string name="facebook_app_id">1395586277232256</string>
+    <string name="fb_login_protocol_scheme">fb1395586277232256</string>
+
 </resources>

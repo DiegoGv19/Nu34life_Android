@@ -51,14 +51,4 @@ public class Membership {
         this.duration = duration;
     }
 
-    public List<Suscription> getSuscriptions() {
-        return suscriptions;
-    }
-
-    public void setSuscriptions(List<Suscription> suscriptions) {
-        this.suscriptions = suscriptions;
-    }
-
-    private List<Suscription> suscriptions = new ArrayList<>();
-
 }

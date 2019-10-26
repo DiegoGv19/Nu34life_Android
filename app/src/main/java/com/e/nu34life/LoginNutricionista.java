@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -51,8 +52,10 @@ public class LoginNutricionista extends AppCompatActivity {
         btnIniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(etEmail.getText().toString() != "" && etContraseña.getText().toString() != "" ){
+
+                if(validar()){
                     getNutricionista(etEmail.getText().toString(),etContraseña.getText().toString());
+
                 }
 
 
@@ -64,33 +67,53 @@ public class LoginNutricionista extends AppCompatActivity {
 
     }
 
-    private void getNutricionista(String email, final String contraseña){
+    private void getNutricionista(String email, String contraseña){
 
-        Call<List<Nutritionist>> call = iNutritionist.getNutricionista(email);
-        call.enqueue(new Callback<List<Nutritionist>>() {
+        Call<Nutritionist> call = iNutritionist.getNutricionista(email,contraseña);
+        call.enqueue(new Callback<Nutritionist>() {
             @Override
-            public void onResponse(Call<List<Nutritionist>> call, Response<List<Nutritionist>> response) {
+            public void onResponse(Call<Nutritionist> call, Response<Nutritionist> response) {
                 if(!response.isSuccessful()){
+
                     return;
                 }
 
-                List<Nutritionist> listnutritionists = response.body();
+                Nutritionist listnutritionists = response.body();
                 if(listnutritionists != null){
-                    for (Nutritionist nut: listnutritionists){
-                        if(nut.getPassword().equals(contraseña)){
-                            Intent intent = new Intent(LoginNutricionista.this,MainNutricionita.class);
-                            intent.putExtra("Correo",etEmail.getText().toString());
-                            startActivity(intent);
-                        }                    }
+                    Intent intent = new Intent(LoginNutricionista.this,MainNutricionita.class);
+                    intent.putExtra("Id",listnutritionists.getId().toString());
+                    startActivity(intent);
+
+
+                }
+                else {
+                    Toast.makeText(LoginNutricionista.this, "Este usuario no esta registrado", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
-            public void onFailure(Call<List<Model.Nutritionist>> call, Throwable t) {
+            public void onFailure(Call<Nutritionist> call, Throwable t) {
 
             }
-
         });
+    }
 
+
+    public boolean validar(){
+        boolean retorno  = true;
+        String email = etEmail.getText().toString();
+        String contraseña = etContraseña.getText().toString();
+
+        if (email.isEmpty()){
+            etEmail.setError("Ingresa Email");
+            retorno = false;
+        }
+
+        if (contraseña.isEmpty()){
+            etContraseña.setError("Ingresa Contraeña");
+            retorno = false;
+        }
+
+        return retorno;
     }
 }

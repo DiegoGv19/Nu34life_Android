@@ -33,12 +33,15 @@ public class SaludFragma extends Fragment {
     private String email;
     private IPatient iPatient;
 
+    private String nombre;
+    private String Id;
 
     @Override
     public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         email = getActivity().getIntent().getStringExtra("Correo");
-
+        nombre = getActivity().getIntent().getStringExtra("Nombre");
+        Id = getActivity().getIntent().getStringExtra("Id");
     }
 
     @Override
@@ -51,15 +54,16 @@ public class SaludFragma extends Fragment {
          tvGlucosa = vista.findViewById(R.id.tvPatientGlucosa);
          tvNombre = vista.findViewById(R.id.tvPatienteNombreS);
          tvFecha = vista.findViewById(R.id.tvPatientFechaS);
-         getPatientes();
 
+        tvNombre.setText(nombre);
+        getState(Id);
         return vista;
     }
 
 
-    private void getState(Long id){
-
-        Call<State> call = iState.getStateId(id);
+    private void getState(String id){
+        Long idPat = Long.parseLong(id);
+        Call<State> call = iState.getStateId(idPat);
         call.enqueue(new Callback<State>() {
             @Override
             public void onResponse(Call<State> call, Response<State> response) {
@@ -70,7 +74,6 @@ public class SaludFragma extends Fragment {
                 tvPeso.setText(state.getWeight().toString());
                 tvTalla.setText(state.getHeight().toString());
                 tvGlucosa.setText(state.getGlucose().toString());
-                tvFecha.setText(state.getGeneratedDate());
             }
 
             @Override
@@ -80,33 +83,5 @@ public class SaludFragma extends Fragment {
         });
     }
 
-
-    private void getPatientes(){
-
-
-        Call<List<Patient>> call = iPatient.getPatient(email);
-        call.enqueue(new Callback<List<Patient>>() {
-            @Override
-            public void onResponse(Call<List<Patient>> call, Response<List<Patient>> response) {
-                if(!response.isSuccessful()){
-                    return;
-                }
-
-                List<Patient> listpatientes = response.body();
-                if(listpatientes != null){
-                    for (Patient pat: listpatientes){
-                        tvNombre.setText(pat.getName());
-                        getState(1l);
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Patient>> call, Throwable t) {
-
-            }
-        });
-
-    }
 
 }

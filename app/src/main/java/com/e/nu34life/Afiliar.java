@@ -35,16 +35,16 @@ public class Afiliar extends AppCompatActivity {
         etEmail = (EditText) findViewById(R.id.etEmailNutricionistaAfi);
         btnAfiliar = (Button) findViewById(R.id.btnAfiliarNutricionistaPatient);
 
-        btnAfiliar.setOnClickListener(new View.OnClickListener() {
+        /*btnAfiliar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getPatientes();
             }
         });
-
+*/
     }
 
-    private void getPatientes(){
+    /*private void getPatientes(){
 
         final Patient patient = new Patient();
         final Nutritionist nutritionist = new Nutritionist();
@@ -85,7 +85,6 @@ public class Afiliar extends AppCompatActivity {
                                         nutritionist.setActivated(nut.getActivated());
                                         nutritionist.setValidated(nut.getValidated());
                                         nutritionist.setBirthdate(nut.getBirthdate());
-                                        patient.setNutritionist(nutritionist);
                                         Call<Patient> callput = iPatient.putPatient(patient);
                                         callput.enqueue(new Callback<Patient>() {
                                             @Override
@@ -118,5 +117,5 @@ public class Afiliar extends AppCompatActivity {
         });
 
     }
-
+*/
 }

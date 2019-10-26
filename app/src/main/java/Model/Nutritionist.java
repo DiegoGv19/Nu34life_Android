@@ -14,22 +14,37 @@ public class Nutritionist {
     private String birthdate;
     private String email;
     private String password;
-    private Boolean validated;
-    private Boolean activated;
-    private Patient patient;
+    private String phone;
+    private List<Patient> patients;
 
-    public Nutritionist(String name, String lastName, String birthdate, String email, String password, Boolean validated, Boolean activated) {
+    public Nutritionist( String name, String lastName, String birthdate, String email, String password, String phone, Patient patient,  List<Patient> patients) {
         this.name = name;
         this.lastName = lastName;
         this.birthdate = birthdate;
         this.email = email;
         this.password = password;
-        this.validated = validated;
-        this.activated = activated;
+        this.phone = phone;
+        this.patients = patients;
     }
-    public Nutritionist(){}
-    private List<Suscription> suscriptions = new ArrayList<Suscription>();
-    private List<Patient> patients = new ArrayList<Patient>();
+
+    public Nutritionist( String name, String lastName, String birthdate, String email, String password, String phone) {
+        this.name = name;
+        this.lastName = lastName;
+        this.birthdate = birthdate;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+
 
     public List<Patient> getPatients() {
         return patients;
@@ -87,32 +102,6 @@ public class Nutritionist {
         this.password = password;
     }
 
-    public Boolean getValidated() {
-        return validated;
-    }
-
-    public void setValidated(Boolean validated) {
-        this.validated = validated;
-    }
-
-    public Boolean getActivated() {
-        return activated;
-    }
-
-    public void setActivated(Boolean activated) {
-        this.activated = activated;
-    }
-
-    public Patient getPatient() {
-        return patient;
-    }
-
-    public void setPatient(Patient patient) {
-        this.patient = patient;
-    }
-
-
-
     @Override
     public String toString() {
         return "Nutritionist{" +
@@ -122,10 +111,7 @@ public class Nutritionist {
                 ", birthdate='" + birthdate + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", validated=" + validated +
-                ", activated=" + activated +
-                ", patient=" + patient +
-                ", suscriptions=" + suscriptions +
+                ", phone='" + phone + '\'' +
                 ", patients=" + patients +
                 '}';
     }

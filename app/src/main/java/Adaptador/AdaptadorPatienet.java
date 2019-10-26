@@ -48,7 +48,7 @@ public class AdaptadorPatienet extends BaseAdapter {
         ImageView image = (ImageView) vista.findViewById(R.id.ivIteamPerfil);
         TextView datos = (TextView) vista.findViewById(R.id.tvDatos);
         image.setImageResource(R.drawable.ic_account_circle_black_24dp);
-        datos.setText("  "+listaPatiente.get(position).getName().toString() +"  " + listaPatiente.get(position).getLastName().toString());
+        datos.setText("  "+listaPatiente.get(position).getName() +"  " + listaPatiente.get(position).getLastName());
         return vista;
     }
 }

@@ -11,10 +11,26 @@ public class State {
     private Integer height;
     private Integer weight;
     private Integer glucose;
-    private Boolean affiliated;
-    private String generatedDate;
+    private Date generatedDate;
 
     private Patient patient;
+
+    public State( String description, Integer height, Integer weight, Integer glucose) {
+        this.description = description;
+        this.height = height;
+        this.weight = weight;
+        this.glucose = glucose;
+    }
+
+    public State(String description, Integer height, Integer weight, Integer glucose, Date generatedDate) {
+        this.description = description;
+        this.height = height;
+        this.weight = weight;
+        this.glucose = glucose;
+        this.generatedDate = generatedDate;
+
+
+    }
 
     public Long getId() {
         return id;
@@ -56,19 +72,12 @@ public class State {
         this.glucose = glucose;
     }
 
-    public Boolean getAffiliated() {
-        return affiliated;
-    }
 
-    public void setAffiliated(Boolean affiliated) {
-        this.affiliated = affiliated;
-    }
-
-    public String getGeneratedDate() {
+    public Date getGeneratedDate() {
         return generatedDate;
     }
 
-    public void setGeneratedDate(String generatedDate) {
+    public void setGeneratedDate(Date generatedDate) {
         this.generatedDate = generatedDate;
     }
 
@@ -80,16 +89,6 @@ public class State {
         this.patient = patient;
     }
 
-    public List<Drug> getDrug() {
-        return drug;
-    }
-
-    public void setDrug(List<Drug> drug) {
-        this.drug = drug;
-    }
-
-    private List<Drug> drug;
-
     @Override
     public String toString() {
         return "State{" +
@@ -98,8 +97,7 @@ public class State {
                 ", height=" + height +
                 ", weight=" + weight +
                 ", glucose=" + glucose +
-                ", affiliated=" + affiliated +
-                ", generatedDate=" + generatedDate +
+                ", generatedDate='" + generatedDate + '\'' +
                 '}';
     }
 }

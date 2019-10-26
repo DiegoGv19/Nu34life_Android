@@ -21,6 +21,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="213dp"
+        android:layout_height="171dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/nutricionistalogo"
+        tools:srcCompat="@drawable/ic_account_circle_black_24dp" />
+
     <EditText
         android:id="@+id/etContraseña2"
         android:layout_width="300dp"
@@ -37,7 +49,9 @@
         android:layout_width="300dp"
         android:layout_height="72dp"
         android:layout_marginTop="48dp"
+        android:background="@drawable/botonredondo"
         android:text="@string/btnIniciar"
+        android:textColor="@color/colorPrimaryText"
         app:layout_constraintStart_toStartOf="@+id/etContraseña2"
         app:layout_constraintTop_toBottomOf="@+id/etContraseña2" />
 
@@ -47,7 +61,9 @@
         android:layout_height="72dp"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/botonredondo"
         android:text="@string/btnCrear"
+        android:textColor="@color/colorPrimaryText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/btnIniciar2"
         app:layout_constraintTop_toBottomOf="@+id/btnIniciar2"

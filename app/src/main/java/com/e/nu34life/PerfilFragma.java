@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -34,6 +35,9 @@ public class PerfilFragma extends Fragment {
     private TextView tvFecha;
     private Button btnAfiliar;
     private String email;
+    private String contraseña;
+    private String nombre;
+    private String Id;
 
     private IPatient iPatient;
 
@@ -42,6 +46,9 @@ public class PerfilFragma extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         email = getActivity().getIntent().getStringExtra("Correo");
+        contraseña = getActivity().getIntent().getStringExtra("Contraseña");
+        nombre = getActivity().getIntent().getStringExtra("Id");
+        Id = getActivity().getIntent().getStringExtra("Nombre");
     }
 
 
@@ -60,13 +67,15 @@ public class PerfilFragma extends Fragment {
         tvContraseña= (TextView) vista.findViewById(R.id.tvPatientContraseña);
         tvFecha= (TextView) vista.findViewById(R.id.tvPatienteFecha);
         btnAfiliar = (Button) vista.findViewById(R.id.btnAfiliar);
-        getPatientes();
+        getPatientes(email,contraseña);
 
         btnAfiliar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(),Afiliar.class);
                 intent.putExtra("correo",email);
+                intent.putExtra("contraseña",contraseña);
+
                 startActivity(intent);
             }
         });
@@ -75,32 +84,33 @@ public class PerfilFragma extends Fragment {
 
     }
 
-    private void getPatientes(){
+    private void getPatientes(String email, final String password){
 
 
-        Call<List<Patient>> call = iPatient.getPatient(email);
-        call.enqueue(new Callback<List<Patient>>() {
+        Call<Patient> call = iPatient.getPatientEP(email,password);
+        call.enqueue(new Callback<Patient>() {
             @Override
-            public void onResponse(Call<List<Patient>> call, Response<List<Patient>> response) {
+            public void onResponse(Call<Patient> call, Response<Patient> response) {
                 if(!response.isSuccessful()){
                     return;
                 }
 
-                List<Patient> listpatientes = response.body();
+                Patient listpatientes = response.body();
                 if(listpatientes != null){
-                    for (Patient pat: listpatientes){
-                        tvContraseña.setText(pat.getPassword());
-                        tvCorreo.setText(pat.getEmail());
-                        tvFecha.setText(pat.getBirthdate());
-                        tvNombre.setText(pat.getName());
-                        tvApellido.setText(pat.getLastName());
+                    tvContraseña.setText(listpatientes.getPassword());
+                    tvCorreo.setText(listpatientes.getEmail());
+                    tvFecha.setText(listpatientes.getBirthdate());
+                    tvNombre.setText(listpatientes.getName());
+                    tvApellido.setText(listpatientes.getLastName());
 
-                    }
+
+
                 }
+
             }
 
             @Override
-            public void onFailure(Call<List<Patient>> call, Throwable t) {
+            public void onFailure(Call<Patient> call, Throwable t) {
 
             }
         });
