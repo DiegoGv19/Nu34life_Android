@@ -31,10 +31,11 @@ public class SaludFragma extends Fragment {
     private View vista;
     private IState iState;
     private String email;
-    private IPatient iPatient;
-
+    private String contraseña;
     private String nombre;
     private String Id;
+    private IPatient iPatient;
+
 
     @Override
     public void onCreate( Bundle savedInstanceState) {
@@ -42,6 +43,7 @@ public class SaludFragma extends Fragment {
         email = getActivity().getIntent().getStringExtra("Correo");
         nombre = getActivity().getIntent().getStringExtra("Nombre");
         Id = getActivity().getIntent().getStringExtra("Id");
+        contraseña = getActivity().getIntent().getStringExtra("Contraseña");
     }
 
     @Override

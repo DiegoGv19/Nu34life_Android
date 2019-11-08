@@ -32,6 +32,7 @@ public class DatosPatient extends AppCompatActivity {
     private TextView tvGlucosa;
     private Button btnModificar;
     private Button btnEnviarMensaje;
+    private Button btnDieta;
 
     private String Correo;
     private String Contraseña;
@@ -60,8 +61,22 @@ public class DatosPatient extends AppCompatActivity {
         tvGlucosa = (TextView) findViewById(R.id.tvGlucosa);
         btnModificar = (Button) findViewById(R.id.btnModificar);
         btnEnviarMensaje = (Button) findViewById(R.id.btnEnviarMensaje);
+        btnDieta = (Button) findViewById(R.id.btnDieta);
+
+
         //getPatientes();
         getState(Id);
+
+
+        btnDieta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DatosPatient.this,ListaDiasAsignarComida.class);
+                intent.putExtra("Correo",Correo);
+                intent.putExtra("Contraseña",Contraseña);
+                startActivity(intent);
+            }
+        });
 
         btnModificar.setOnClickListener(new View.OnClickListener() {
             @Override

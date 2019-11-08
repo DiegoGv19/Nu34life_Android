@@ -33,7 +33,6 @@ public class PerfilFragma extends Fragment {
     private TextView tvCorreo;
     private TextView tvContraseña;
     private TextView tvFecha;
-    private Button btnAfiliar;
     private String email;
     private String contraseña;
     private String nombre;
@@ -66,19 +65,9 @@ public class PerfilFragma extends Fragment {
         tvCorreo= (TextView) vista.findViewById(R.id.tvPatientCorreo);
         tvContraseña= (TextView) vista.findViewById(R.id.tvPatientContraseña);
         tvFecha= (TextView) vista.findViewById(R.id.tvPatienteFecha);
-        btnAfiliar = (Button) vista.findViewById(R.id.btnAfiliar);
         getPatientes(email,contraseña);
 
-        btnAfiliar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),Afiliar.class);
-                intent.putExtra("correo",email);
-                intent.putExtra("contraseña",contraseña);
 
-                startActivity(intent);
-            }
-        });
 
         return vista;
 

@@ -9,12 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegistrarRecordatorio"></activity>
+        <activity android:name=".InformacionPlatoSeleccionadoNutricionista"></activity>
+        <activity android:name=".PlatosAsignadosPorNutricionistaMain" />
+        <activity android:name=".PasosPlatoPaciente" />
+        <activity android:name=".IngredientesPlatoPaciente" />
+        <activity android:name=".InformacionPlatoPaciente" />
+        <activity android:name=".PacienteDietaDeDiaTurno" />
+        <activity android:name=".PacienteDiasDietas" />
+        <activity android:name=".AignarComidaPaciente" />
+        <activity android:name=".ListaDiasAsignarComida" />
+        <activity android:name=".RegistrarRecordatorio" />
         <activity android:name=".Recordatorios" />
         <activity android:name=".EnviarMensaje" />
-        <activity android:name=".Afiliar" />
         <activity android:name=".ComidaAComer" />
-        <activity android:name=".Comidas" />
+        <activity android:name=".LitaDiasHorarioAsiganarComida" />
         <activity
             android:name=".MainPatient"
             android:label="@string/title_activity_main_patient" />

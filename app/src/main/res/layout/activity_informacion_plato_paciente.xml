@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InformacionPlatoPaciente">
+
+    <TextView
+        android:id="@+id/TVTotalFatDatosPlato"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="TotalFat:"
+        app:layout_constraintStart_toStartOf="@+id/TVTotalFatPlato"
+        app:layout_constraintTop_toBottomOf="@+id/TVTotalFatPlato" />
+
+    <TextView
+        android:id="@+id/TVEnergeticValuePlato"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="EnergeticValue:"
+        app:layout_constraintStart_toStartOf="@+id/TVCarbohydratesDatoPlato"
+        app:layout_constraintTop_toBottomOf="@+id/TVCarbohydratesDatoPlato" />
+
+    <TextView
+        android:id="@+id/TVEnergeticValueDatoPlato"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="EnergeticValue:"
+        app:layout_constraintStart_toStartOf="@+id/TVEnergeticValuePlato"
+        app:layout_constraintTop_toBottomOf="@+id/TVEnergeticValuePlato" />
+
+    <TextView
+        android:id="@+id/TVProteinPlato"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="Protein:"
+        app:layout_constraintStart_toStartOf="@+id/TVEnergeticValueDatoPlato"
+        app:layout_constraintTop_toBottomOf="@+id/TVEnergeticValueDatoPlato" />
+
+    <TextView
+        android:id="@+id/TVProteinDatoPlato"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="Protein:"
+        app:layout_constraintStart_toStartOf="@+id/TVProteinPlato"
+        app:layout_constraintTop_toBottomOf="@+id/TVProteinPlato" />
+
+    <TextView
+        android:id="@+id/TVSaltDatoPlato"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="Salt:"
+        app:layout_constraintStart_toStartOf="@+id/TVSalt"
+        app:layout_constraintTop_toBottomOf="@+id/TVSalt" />
+
+    <TextView
+        android:id="@+id/TVSaturatedFatsPlato"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="10dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="SaturatedFats:"
+        app:layout_constraintStart_toEndOf="@+id/TVCarbohydratesPlato"
+        app:layout_constraintTop_toBottomOf="@+id/tvPlatoSeleccionadoPasos" />
+
+    <TextView
+        android:id="@+id/TVSaturatedFatsDatoPlato"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="SaturatedFats:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/TVSaturatedFatsPlato"
+        app:layout_constraintTop_toBottomOf="@+id/TVSaturatedFatsPlato" />
+
+    <TextView
+        android:id="@+id/TVSugarsPlato"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="Sugars:"
+        app:layout_constraintStart_toStartOf="@+id/TVSaturatedFatsDatoPlato"
+        app:layout_constraintTop_toBottomOf="@+id/TVSaturatedFatsDatoPlato" />
+
+    <TextView
+        android:id="@+id/TVSaltPlato"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="Salt:"
+        app:layout_constraintStart_toStartOf="@+id/TVProteinDato"
+        app:layout_constraintTop_toBottomOf="@+id/TVProteinDato" />
+
+    <TextView
+        android:id="@+id/TVSugarsDatoPlato"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="Sugars"
+        app:layout_constraintStart_toStartOf="@+id/TVSugarsPlato"
+        app:layout_constraintTop_toBottomOf="@+id/TVSugarsPlato" />
+
+    <TextView
+        android:id="@+id/TVTotalFatPlato"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="TotalFat:"
+        app:layout_constraintStart_toStartOf="@+id/TVSugarsDatoPlato"
+        app:layout_constraintTop_toBottomOf="@+id/TVSugarsDatoPlato" />
+
+    <TextView
+        android:id="@+id/TVCarbohydratesDatoPlato"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="Carbohydrates:"
+        app:layout_constraintStart_toStartOf="@+id/TVCarbohydratesPlato"
+        app:layout_constraintTop_toBottomOf="@+id/TVCarbohydratesPlato" />
+
+    <TextView
+        android:id="@+id/tvTurnoSeleccionadoPasos"
+        android:layout_width="214dp"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6Pasos" />
+
+    <TextView
+        android:id="@+id/tvPlatoSeleccionadoPasos"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTurnoSeleccionadoPasos" />
+
+    <ImageView
+        android:id="@+id/imageView6Pasos"
+        android:layout_width="432dp"
+        android:layout_height="158dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/portada_salud" />
+
+    <TextView
+        android:id="@+id/tvDiaSeleccionadoPasos"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvTurnoSeleccionado"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6Pasos" />
+
+    <TextView
+        android:id="@+id/TVCarbohydratesPlato"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="10dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="Carbohydrates:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPlatoSeleccionadoPasos" />
+
+    <Button
+        android:id="@+id/btnIngredientesPlato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:background="@color/colorPrimary"
+        android:text="Ingredientes"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintStart_toStartOf="@+id/TVProteinDatoPlato"
+        app:layout_constraintTop_toBottomOf="@+id/TVProteinDatoPlato" />
+
+    <Button
+        android:id="@+id/btnPasosPlato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:background="@color/colorPrimary"
+        android:text="Pasos"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintStart_toStartOf="@+id/TVTotalFatDatosPlato"
+        app:layout_constraintTop_toBottomOf="@+id/TVTotalFatDatosPlato" />
+</androidx.constraintlayout.widget.ConstraintLayout>

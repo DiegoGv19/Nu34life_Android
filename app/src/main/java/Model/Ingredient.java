@@ -5,97 +5,42 @@ import java.util.List;
 
 public class Ingredient {
 
-    private Long id;
 
-    private String name;
-    private String description;
-    private Integer carbohydrate;
-    private Integer fat;
-    private Integer protein;
-    private Integer cholesterol;
 
-    public Long getId() {
-        return id;
+    private String food;
+    private String unit;
+    private Integer quantity;
+
+    public String getFood() {
+        return food;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setFood(String food) {
+        this.food = food;
     }
 
-    public String getName() {
-        return name;
+    public String getUnit() {
+        return unit;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUnit(String unit) {
+        this.unit = unit;
     }
 
-    public String getDescription() {
-        return description;
+    public Integer getQuantity() {
+        return quantity;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 
-    public Integer getCarbohydrate() {
-        return carbohydrate;
+    @Override
+    public String toString() {
+        return "Ingredient{" +
+                "food='" + food + '\'' +
+                ", unit='" + unit + '\'' +
+                ", quantity=" + quantity +
+                '}';
     }
-
-    public void setCarbohydrate(Integer carbohydrate) {
-        this.carbohydrate = carbohydrate;
-    }
-
-    public Integer getFat() {
-        return fat;
-    }
-
-    public void setFat(Integer fat) {
-        this.fat = fat;
-    }
-
-    public Integer getProtein() {
-        return protein;
-    }
-
-    public void setProtein(Integer protein) {
-        this.protein = protein;
-    }
-
-    public Integer getCholesterol() {
-        return cholesterol;
-    }
-
-    public void setCholesterol(Integer cholesterol) {
-        this.cholesterol = cholesterol;
-    }
-
-    public Integer getSodium() {
-        return sodium;
-    }
-
-    public void setSodium(Integer sodium) {
-        this.sodium = sodium;
-    }
-
-    public Integer getPotasium() {
-        return potasium;
-    }
-
-    public void setPotasium(Integer potasium) {
-        this.potasium = potasium;
-    }
-
-    public List<RecipeDetail> getRecipesdetails() {
-        return recipesdetails;
-    }
-
-    public void setRecipesdetails(List<RecipeDetail> recipesdetails) {
-        this.recipesdetails = recipesdetails;
-    }
-
-    private Integer sodium;
-    private Integer potasium;
-    private List<RecipeDetail> recipesdetails = new ArrayList<RecipeDetail>();
-
 }

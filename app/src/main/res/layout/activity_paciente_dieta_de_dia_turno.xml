@@ -4,22 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ComidaAComer">
+    tools:context=".PacienteDietaDeDiaTurno">
 
     <TextView
-        android:id="@+id/tvDiaComida"
+        android:id="@+id/tvDiaComidaPaciente"
         android:layout_width="0dp"
         android:layout_height="63dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="TextView"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvHorarioComidaPaciente"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageView3Paciente"
         android:layout_width="432dp"
         android:layout_height="158dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,19 +30,20 @@
         app:srcCompat="@drawable/portada_salud" />
 
     <TextView
-        android:id="@+id/tvHorarioComida"
+        android:id="@+id/tvHorarioComidaPaciente"
         android:layout_width="0dp"
         android:layout_height="63dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="TextView"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/listViewComidasPaciente"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDiaComida" />
 
     <ListView
-        android:id="@+id/listViewComidas"
+        android:id="@+id/listViewComidasPaciente"
         android:layout_width="420dp"
         android:layout_height="312dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,4 +52,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvHorarioComida"
         app:layout_constraintVertical_bias="1.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

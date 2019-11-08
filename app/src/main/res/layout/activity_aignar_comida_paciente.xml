@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AignarComidaPaciente">
+
+    <TextView
+        android:id="@+id/TVTotalFatDatos"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="TotalFat:"
+        app:layout_constraintStart_toStartOf="@+id/TVTotalFat"
+        app:layout_constraintTop_toBottomOf="@+id/TVTotalFat" />
+
+    <TextView
+        android:id="@+id/TVEnergeticValue"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="EnergeticValue:"
+        app:layout_constraintStart_toStartOf="@+id/TVCarbohydratesDato"
+        app:layout_constraintTop_toBottomOf="@+id/TVCarbohydratesDato" />
+
+    <TextView
+        android:id="@+id/TVEnergeticValueDato"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="EnergeticValue:"
+        app:layout_constraintStart_toStartOf="@+id/TVEnergeticValue"
+        app:layout_constraintTop_toBottomOf="@+id/TVEnergeticValue" />
+
+    <TextView
+        android:id="@+id/TVProtein"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="Protein:"
+        app:layout_constraintStart_toStartOf="@+id/TVEnergeticValueDato"
+        app:layout_constraintTop_toBottomOf="@+id/TVEnergeticValueDato" />
+
+    <TextView
+        android:id="@+id/TVProteinDato"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="Protein:"
+        app:layout_constraintStart_toStartOf="@+id/TVProtein"
+        app:layout_constraintTop_toBottomOf="@+id/TVProtein" />
+
+    <TextView
+        android:id="@+id/TVSaltDato"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="Salt:"
+        app:layout_constraintStart_toStartOf="@+id/TVSalt"
+        app:layout_constraintTop_toBottomOf="@+id/TVSalt" />
+
+    <TextView
+        android:id="@+id/TVSaturatedFats"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="10dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="SaturatedFats:"
+        app:layout_constraintStart_toEndOf="@+id/TVCarbohydrates"
+        app:layout_constraintTop_toBottomOf="@+id/tvPlatoSeleccionado" />
+
+    <TextView
+        android:id="@+id/TVSaturatedFatsDato"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="SaturatedFats:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/TVSaturatedFats"
+        app:layout_constraintTop_toBottomOf="@+id/TVSaturatedFats" />
+
+    <TextView
+        android:id="@+id/TVSugars"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="Sugars:"
+        app:layout_constraintStart_toStartOf="@+id/TVSaturatedFatsDato"
+        app:layout_constraintTop_toBottomOf="@+id/TVSaturatedFatsDato" />
+
+    <TextView
+        android:id="@+id/TVSalt"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="Salt:"
+        app:layout_constraintStart_toStartOf="@+id/TVProteinDato"
+        app:layout_constraintTop_toBottomOf="@+id/TVProteinDato" />
+
+    <TextView
+        android:id="@+id/TVSugarsDato"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="Sugars"
+        app:layout_constraintStart_toStartOf="@+id/TVSugars"
+        app:layout_constraintTop_toBottomOf="@+id/TVSugars" />
+
+    <TextView
+        android:id="@+id/TVTotalFat"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="TotalFat:"
+        app:layout_constraintStart_toStartOf="@+id/TVSugarsDato"
+        app:layout_constraintTop_toBottomOf="@+id/TVSugarsDato" />
+
+    <TextView
+        android:id="@+id/TVCarbohydratesDato"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="Carbohydrates:"
+        app:layout_constraintStart_toStartOf="@+id/TVCarbohydrates"
+        app:layout_constraintTop_toBottomOf="@+id/TVCarbohydrates" />
+
+    <TextView
+        android:id="@+id/tvTurnoSeleccionado"
+        android:layout_width="214dp"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+    <TextView
+        android:id="@+id/tvPlatoSeleccionado"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTurnoSeleccionado" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="432dp"
+        android:layout_height="158dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/portada_salud" />
+
+    <TextView
+        android:id="@+id/tvDiaSeleccionado"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvPlatoSeleccionado"
+        app:layout_constraintEnd_toStartOf="@+id/tvTurnoSeleccionado"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnEliminar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:background="@color/colorPrimary"
+        android:text="Agreagar"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/TVCarbohydrates"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="10dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="Carbohydrates:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPlatoSeleccionado" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

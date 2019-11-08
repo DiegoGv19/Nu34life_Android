@@ -9,6 +9,14 @@ public class Recipe {
 
     private String name;
 
+    private Integer servings;
+
+    public Recipe(Long id, String name, Integer servings) {
+        this.id = id;
+        this.name = name;
+        this.servings = servings;
+    }
+
     public Long getId() {
         return id;
     }
@@ -25,31 +33,20 @@ public class Recipe {
         this.name = name;
     }
 
-    public List<RecipeDetail> getRecipesdetails() {
-        return recipesdetails;
+    public Integer getServings() {
+        return servings;
     }
 
-    public void setRecipesdetails(List<RecipeDetail> recipesdetails) {
-        this.recipesdetails = recipesdetails;
+    public void setServings(Integer servings) {
+        this.servings = servings;
     }
-
-    public List<PlanRecipe> getPlanrecipe() {
-        return planrecipe;
-    }
-
-    public void setPlanrecipe(List<PlanRecipe> planrecipe) {
-        this.planrecipe = planrecipe;
-    }
-
-    private List<RecipeDetail> recipesdetails = new ArrayList<>();
-
-    private List<PlanRecipe> planrecipe = new ArrayList<PlanRecipe>();
 
     @Override
     public String toString() {
         return "Recipe{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", servings=" + servings +
                 '}';
     }
 }

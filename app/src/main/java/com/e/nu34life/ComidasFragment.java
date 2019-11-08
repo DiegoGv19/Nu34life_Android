@@ -14,18 +14,19 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import Adaptador.AdamptadorDias;
-import Adaptador.AdaptadorPatienet;
-import Model.Patient;
 
 
 public class ComidasFragment extends Fragment {
 
     private View vista;
     private ListView lvlistaDias;
+    private String Id;
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         vista = inflater.inflate(R.layout.fragment_comidas,null);
         final String[] listaDias = {"Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"};
+        Id = getActivity().getIntent().getStringExtra("Id");
 
 
         lvlistaDias =  (ListView) vista.findViewById(R.id.lvDiasSemana);
@@ -39,8 +40,10 @@ public class ComidasFragment extends Fragment {
         lvlistaDias.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(),Comidas.class);
+                Intent intent = new Intent(getActivity(), PacienteDiasDietas.class);
                 intent.putExtra("dia",listaDias[position]);
+                intent.putExtra("Id",Id);
+
                 startActivity(intent);
             }
         });
