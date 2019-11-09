@@ -20,7 +20,7 @@ public class PacienteDiasDietas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paciente_dias_dietas);
-        final String[] listahorario = {"Mañana","Media Mañana","Tarde","Media Tarde","Cena"};
+        final String[] listahorario = {"Mañana","MedioDia","Tarde","Lonche","Cena"};
         lvhorarioDias = (ListView) findViewById(R.id.lvhorariosDiaPaciente);
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,listahorario);

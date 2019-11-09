@@ -17,6 +17,10 @@ public class Recipe {
         this.servings = servings;
     }
 
+    public Recipe() {
+
+    }
+
     public Long getId() {
         return id;
     }

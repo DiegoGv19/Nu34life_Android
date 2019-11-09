@@ -10,25 +10,28 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import Adaptador.AdaptadorComidas;
+import Adaptador.AdaptadorPlan;
+import Interface.IPlan;
 import Interface.IRecipe;
 import Model.ApiClient;
+import Model.Plan;
 import Model.Recipe;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class PlatosAsignadosPorNutricionistaMain extends AppCompatActivity {
+    private List<Plan> listPlan;
     private List<Recipe> listRecipe;
-
     private String dia,turno;
-    private String Contraseña;
-    private String Correo;
+    private String Id;
     private ListView listViewComidas;
     private TextView tvdia, tvhorario;
-    private IRecipe iRecipe;
+    private IPlan iPlan;
 
     private Button btnAgregar;
     @Override
@@ -36,14 +39,14 @@ public class PlatosAsignadosPorNutricionistaMain extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_platos_asignados_por_nutricionista_main);
 
-        iRecipe = ApiClient.getRetrofit().create(IRecipe.class);
+        iPlan = ApiClient.getRetrofit().create(IPlan.class);
+
 
         dia = getIntent().getStringExtra("dia");
-        Correo = getIntent().getStringExtra("Correo");
-        Contraseña = getIntent().getStringExtra("Contraseña");
+        Id = getIntent().getStringExtra("Id");
         turno = getIntent().getStringExtra("horario");
 
-        listViewComidas = (ListView) findViewById(R.id.listViewComidas);
+        listViewComidas = (ListView) findViewById(R.id.ltvListaComidaSeleccionada);
 
         tvdia = (TextView) findViewById(R.id.tvDiaComida);
         tvhorario = (TextView) findViewById(R.id.tvHorarioComida);
@@ -52,18 +55,18 @@ public class PlatosAsignadosPorNutricionistaMain extends AppCompatActivity {
 
         tvdia.setText(dia);
         tvhorario.setText(turno);
-        getRecipe();
-
+        getPlan();
         listViewComidas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Recipe recipe = listRecipe.get(position);
+                Plan plan = listPlan.get(position);
                 Intent intent = new Intent(PlatosAsignadosPorNutricionistaMain.this, InformacionPlatoSeleccionadoNutricionista.class);
                 intent.putExtra("dia", dia);
                 intent.putExtra("turno", turno);
-                intent.putExtra("Correo",Correo);
-                intent.putExtra("Contraseña",Contraseña);
-                intent.putExtra("PlatoId",recipe.getId().toString());
+                intent.putExtra("Id",Id);
+                intent.putExtra("PlatoId",plan.getRecipeId().toString());
+                intent.putExtra("PlanId",plan.getId().toString());
+
                 startActivity(intent);
 
             }
@@ -75,37 +78,41 @@ public class PlatosAsignadosPorNutricionistaMain extends AppCompatActivity {
                 Intent intent = new Intent(PlatosAsignadosPorNutricionistaMain.this, ComidaAComer.class);
                 intent.putExtra("dia", dia);
                 intent.putExtra("turno", turno);
-                intent.putExtra("Correo",Correo);
-                intent.putExtra("Contraseña",Contraseña);
+                intent.putExtra("Id",Id);
                 startActivity(intent);
             }
         });
     }
 
-    private void getRecipe(){
+    private void getPlan(){
 
-        Call<List<Recipe>> call = iRecipe.getRecipe();
-        call.enqueue(new Callback<List<Recipe>>() {
+        Long id = Long.parseLong(Id);
+        Call<List<Plan>> call = iPlan.getPlan(id,turno,dia);
+        call.enqueue(new Callback<List<Plan>>() {
             @Override
-            public void onResponse(Call<List<Recipe>> call, Response<List<Recipe>> response) {
+            public void onResponse(Call<List<Plan>> call, Response<List<Plan>> response) {
+
                 if(!response.isSuccessful()){
 
                     return;
                 }
 
-                List<Recipe> listrecipe = response.body();
-                listRecipe = listrecipe;
-                if (listrecipe != null) {
-                    final AdaptadorComidas miadaptador = new AdaptadorComidas(getApplicationContext(), listrecipe);
+                List<Plan> listplan = response.body();
+                listPlan = listplan;
+                if (listplan != null) {
+                    final AdaptadorPlan miadaptador = new AdaptadorPlan(getApplicationContext(), listplan);
                     listViewComidas.setAdapter(miadaptador);
                 }
+
+
             }
 
             @Override
-            public void onFailure(Call<List<Recipe>> call, Throwable t) {
+            public void onFailure(Call<List<Plan>> call, Throwable t) {
 
             }
         });
-
     }
+
+
 }

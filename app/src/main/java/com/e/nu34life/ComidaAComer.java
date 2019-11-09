@@ -27,8 +27,7 @@ public class ComidaAComer extends AppCompatActivity {
     private List<Recipe> listRecipe;
 
     private String dia,turno;
-    private String Contraseña;
-    private String Correo;
+    private String Id;
     private ListView listViewComidas;
     private TextView tvdia, tvhorario;
     private IRecipe iRecipe;
@@ -40,8 +39,7 @@ public class ComidaAComer extends AppCompatActivity {
         iRecipe = ApiClient.getRetrofit().create(IRecipe.class);
 
         dia = getIntent().getStringExtra("dia");
-        Correo = getIntent().getStringExtra("Correo");
-        Contraseña = getIntent().getStringExtra("Contraseña");
+        Id = getIntent().getStringExtra("Id");
         turno = getIntent().getStringExtra("turno");
 
         listViewComidas = (ListView) findViewById(R.id.listViewComidas);
@@ -60,8 +58,7 @@ public class ComidaAComer extends AppCompatActivity {
                 Intent intent = new Intent(ComidaAComer.this, AignarComidaPaciente.class);
                 intent.putExtra("dia", dia);
                 intent.putExtra("turno", turno);
-                intent.putExtra("Correo",Correo);
-                intent.putExtra("Contraseña",Contraseña);
+                intent.putExtra("Id",Id);
                 intent.putExtra("PlatoId",recipe.getId().toString());
                 startActivity(intent);
 

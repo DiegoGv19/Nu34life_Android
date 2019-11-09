@@ -10,9 +10,11 @@ import android.widget.TextView;
 import java.util.List;
 
 import Interface.INutrFact;
+import Interface.IPlan;
 import Interface.IRecipe;
 import Model.ApiClient;
 import Model.NutrFact;
+import Model.Plan;
 import Model.Recipe;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -23,8 +25,11 @@ public class InformacionPlatoSeleccionadoNutricionista extends AppCompatActivity
     private String Contraseña;
     private String Correo;
     private String PlatoId;
+    private String PlanId;
 
     private IRecipe iRecipe;
+    private IPlan iPlan;
+
     private INutrFact iNutrFact;
 
     private TextView tvDia, tvTurno, tvPlato;
@@ -42,11 +47,14 @@ public class InformacionPlatoSeleccionadoNutricionista extends AppCompatActivity
         iRecipe = ApiClient.getRetrofit().create(IRecipe.class);
         iNutrFact = ApiClient.getRetrofit().create(INutrFact.class);
 
+        iPlan = ApiClient.getRetrofit().create(IPlan.class);
+
         dia = getIntent().getStringExtra("dia");
         Correo = getIntent().getStringExtra("Correo");
         Contraseña = getIntent().getStringExtra("Contraseña");
         turno = getIntent().getStringExtra("turno");
         PlatoId = getIntent().getStringExtra("PlatoId");
+        PlanId = getIntent().getStringExtra("PlanId");
 
         tvDia = (TextView) findViewById(R.id.tvDiaSeleccionado);
         tvTurno = (TextView) findViewById(R.id.tvTurnoSeleccionado);
@@ -61,7 +69,7 @@ public class InformacionPlatoSeleccionadoNutricionista extends AppCompatActivity
         TVTotalFat = (TextView) findViewById(R.id.TVTotalFatDatos);;
 
 
-        btnEliminar = (Button) findViewById(R.id.btnEliminar);
+        btnEliminar = (Button) findViewById(R.id.btnAgregarNuevoPlan);
         tvDia.setText(dia);
         tvTurno.setText(turno);
         getRecipe();
@@ -71,10 +79,32 @@ public class InformacionPlatoSeleccionadoNutricionista extends AppCompatActivity
         btnEliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                deletPlan();
                 finish();
             }
         });
     }
+
+    private void deletPlan(){
+        Long id = Long.parseLong(PlanId);
+        Call<Plan> call = iPlan.deletPlan(id);
+        call.enqueue(new Callback<Plan>() {
+            @Override
+            public void onResponse(Call<Plan> call, Response<Plan> response) {
+                if (!response.isSuccessful()) {
+
+                    return;
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Plan> call, Throwable t) {
+
+            }
+        });
+
+    }
+
 
     private void getRecipe() {
         Long id = Long.parseLong(PlatoId);

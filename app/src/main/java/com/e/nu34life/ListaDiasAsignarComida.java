@@ -12,8 +12,7 @@ import android.widget.ListView;
 import Adaptador.AdamptadorDias;
 
 public class ListaDiasAsignarComida extends AppCompatActivity {
-    private String Correo;
-    private String Contraseña;
+    private String Id;
     final String[] listaDias = {"Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"};
 
     private ListView ltvDias;
@@ -22,8 +21,7 @@ public class ListaDiasAsignarComida extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_dias_asignar_comida);
 
-        Correo = getIntent().getStringExtra("Correo");
-        Contraseña = getIntent().getStringExtra("Contraseña");
+        Id = getIntent().getStringExtra("Id");
 
         ltvDias = (ListView) findViewById(R.id.ltvDias);
 
@@ -38,8 +36,7 @@ public class ListaDiasAsignarComida extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(ListaDiasAsignarComida.this, LitaDiasHorarioAsiganarComida.class);
                 intent.putExtra("dia", listaDias[position]);
-                intent.putExtra("Correo",Correo);
-                intent.putExtra("Contraseña",Contraseña);
+                intent.putExtra("Id",Id);
                 startActivity(intent);
 
             }

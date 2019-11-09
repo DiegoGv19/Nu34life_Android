@@ -12,8 +12,11 @@ import android.widget.TextView;
 import java.util.List;
 
 import Adaptador.AdaptadorComidas;
+import Adaptador.AdaptadorPlan;
+import Interface.IPlan;
 import Interface.IRecipe;
 import Model.ApiClient;
+import Model.Plan;
 import Model.Recipe;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -21,19 +24,20 @@ import retrofit2.Response;
 
 public class PacienteDietaDeDiaTurno extends AppCompatActivity {
     private List<Recipe> listRecipe;
+    private List<Plan> listPlan;
 
     private String dia,turno;
     private String Id;
 
     private ListView listViewComidas;
     private TextView tvdia, tvhorario;
-    private IRecipe iRecipe;
+    private IPlan iPlan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paciente_dieta_de_dia_turno);
-        iRecipe = ApiClient.getRetrofit().create(IRecipe.class);
+        iPlan = ApiClient.getRetrofit().create(IPlan.class);
 
         dia = getIntent().getStringExtra("dia");
       turno = getIntent().getStringExtra("horario");
@@ -46,46 +50,49 @@ public class PacienteDietaDeDiaTurno extends AppCompatActivity {
 
         tvdia.setText(dia);
         tvhorario.setText(turno);
-        getRecipe();
+        getPlan();
 
         listViewComidas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Recipe recipe = listRecipe.get(position);
+                Plan plan = listPlan.get(position);
                 Intent intent = new Intent(PacienteDietaDeDiaTurno.this, InformacionPlatoPaciente.class);
                 intent.putExtra("dia", dia);
                 intent.putExtra("turno", turno);
                 intent.putExtra("Id",Id);
-                intent.putExtra("PlatoId",recipe.getId().toString());
+                intent.putExtra("PlatoId",plan.getRecipeId().toString());
                 startActivity(intent);
 
             }
         });
     }
-    private void getRecipe(){
+    private void getPlan(){
 
-        Call<List<Recipe>> call = iRecipe.getRecipe();
-        call.enqueue(new Callback<List<Recipe>>() {
+        Long id = Long.parseLong(Id);
+        Call<List<Plan>> call = iPlan.getPlan(id,turno,dia);
+        call.enqueue(new Callback<List<Plan>>() {
             @Override
-            public void onResponse(Call<List<Recipe>> call, Response<List<Recipe>> response) {
+            public void onResponse(Call<List<Plan>> call, Response<List<Plan>> response) {
+
                 if(!response.isSuccessful()){
 
                     return;
                 }
 
-                List<Recipe> listrecipe = response.body();
-                listRecipe = listrecipe;
-                if (listrecipe != null) {
-                    final AdaptadorComidas miadaptador = new AdaptadorComidas(getApplicationContext(), listrecipe);
+                List<Plan> listplan = response.body();
+                listPlan = listplan;
+                if (listplan != null) {
+                    final AdaptadorPlan miadaptador = new AdaptadorPlan(getApplicationContext(), listplan);
                     listViewComidas.setAdapter(miadaptador);
                 }
+
+
             }
 
             @Override
-            public void onFailure(Call<List<Recipe>> call, Throwable t) {
+            public void onFailure(Call<List<Plan>> call, Throwable t) {
 
             }
         });
-
     }
 }

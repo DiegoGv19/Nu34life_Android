@@ -72,8 +72,8 @@ public class DatosPatient extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DatosPatient.this,ListaDiasAsignarComida.class);
-                intent.putExtra("Correo",Correo);
-                intent.putExtra("Contraseña",Contraseña);
+                intent.putExtra("Id",Id);
+
                 startActivity(intent);
             }
         });
